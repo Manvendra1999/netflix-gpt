@@ -1,10 +1,10 @@
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO } from '../utils/constants';
+import { auth } from '../utils/Firebase';
 
 
 const Header = () => {

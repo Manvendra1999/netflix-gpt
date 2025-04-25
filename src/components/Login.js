@@ -2,11 +2,10 @@ import React, { useState, useRef } from 'react'
 import Header from './Header'
 import { checkValidData } from '../utils/Validates';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from '../utils/firebase.js'
 import { addUser } from '../utils/userSlice.js';
 import { useDispatch } from 'react-redux';
 import { USER_AVTAR } from '../utils/constants.js';
-
+import { auth } from '../utils/Firebase.js';
 const Login = () => {
     const dispatch = useDispatch();
     const [isSignInForm, setIsSignInForm] = useState(true);
