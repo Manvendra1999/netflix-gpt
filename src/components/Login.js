@@ -1,8 +1,14 @@
 import React, { useState, useRef } from 'react'
 import Header from './Header'
 import { checkValidData } from '../utils/Validates';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from '../utils/firebase.js'
+import { addUser } from '../utils/userSlice.js';
+import { useDispatch } from 'react-redux';
+import { USER_AVTAR } from '../utils/constants.js';
 
 const Login = () => {
+    const dispatch = useDispatch();
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMassage, setErrorMassage] = useState(null);
 
@@ -19,11 +25,54 @@ const Login = () => {
         // console.log(email.current.value)
         // console.log(password.current.value)
 
-        const massage = checkValidData(email.current.value, password.current.value, name.current.value);
+        const massage = checkValidData(email.current.value, password.current.value);
         setErrorMassage(massage);
+        if (massage) return;
+        // sign in sign up logic
+        if (!isSignInForm) {
+            // Sign up Logic 
+            createUserWithEmailAndPassword(
+                auth,
+                email.current.value,
+                password.current.value
+            )
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    updateProfile(user, {
+                        displayName: name.current.value,
+                        photoURL: USER_AVTAR
+                    }).then(() => {
+                        // Profile updated!
+                        const { uid, email, displayName, photoURL } = auth.currentUser;
+                        dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));
 
+                    }).catch((error) => {
+                        setErrorMassage(error.massage)
+                    });
+                    console.log(user)
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrorMassage(errorCode + "-" + errorMessage)
+                });
+        }
+        else {
+            // Sign in Logic 
+            signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    console.log(user)
+                   
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrorMassage(errorCode + "-" + errorMessage)
+                });
+        }
     }
-
 
     return (
         <div>

@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from './Header'
 
 function Browes() {
   return (
     <div>
-      browser page
+    <Header />
     </div>
   )
 }
