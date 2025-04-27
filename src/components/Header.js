@@ -11,7 +11,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const nevigate = useNavigate();
   const user = useSelector(store => store.user)
-  console.log("userrrrr", user)
+  // console.log("userrrrr", user)
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
@@ -26,7 +26,7 @@ useEffect(() => {
    const unsubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
           const {uid, email, displayName, photoURL} = user;
-          console.log("User ::>>",user);
+          // console.log("User ::>>",user);
           dispatch(addUser({uid:uid, email:email, displayName:displayName, photoURL:photoURL}));
           nevigate("/browse");
         } else {

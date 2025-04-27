@@ -19,7 +19,8 @@ Netflix-GPT
  - BugFix: if the user is not logged in Redirect /browse to Login Page and vice-versa
  - Unsubscibed to the onAuthStateChanged callback
  - Add hardcoded value to the constant file
-
+ - Register TMDB API and create an app & access token
+ - Get data from TMDB now playing movie listAPI
 Features
  - Login/Sign Up
  - Sign In /Sign up Form
@@ -39,3 +40,8 @@ NetflixGPT
 
 Project Setup
  - Before starting the project please add .env file and add TMDB and OPENAI KEY into it.
+
+
+Note
+- Make Progressive Web App (PWA) later
+

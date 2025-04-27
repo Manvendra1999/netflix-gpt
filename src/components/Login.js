@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react'
 import Header from './Header'
+import { auth } from '../utils/Firebase.js';
 import { checkValidData } from '../utils/Validates';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { addUser } from '../utils/userSlice.js';
 import { useDispatch } from 'react-redux';
 import { USER_AVTAR } from '../utils/constants.js';
-import { auth } from '../utils/Firebase.js';
 const Login = () => {
     const dispatch = useDispatch();
     const [isSignInForm, setIsSignInForm] = useState(true);
@@ -48,7 +48,7 @@ const Login = () => {
                     }).catch((error) => {
                         setErrorMassage(error.massage)
                     });
-                    console.log(user)
+                    // console.log(user)
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -61,8 +61,8 @@ const Login = () => {
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     // Signed in 
-                    const user = userCredential.user;
-                    console.log(user)
+                    // const user = userCredential.user;
+                    // console.log(user)
                    
                 })
                 .catch((error) => {
