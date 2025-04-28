@@ -2,9 +2,9 @@ import React from 'react'
 
 const VideoTitle = ({ title, overview }) => {
     return (
-        <div className="py-[25%] px-14 absolute w-screen aspect-video">
-        <h1 className="text-5xl font-extrabold mb-6">{title}</h1>
-        <p className="text-lg w-1/3 mb-8 leading-relaxed">{overview}</p>
+        <div className="py-[20%] px-14 absolute w-screen aspect-video">
+        <h1 className="text-5xl font-extrabold mb-6 text-white">{title}</h1>
+        <p className="text-lg w-1/3 mb-8 leading-relaxed text-white">{overview}</p>
         <div className="flex gap-4">
           <button className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-md font-semibold hover:bg-gray-200 transition">
             {/* Black play icon */}

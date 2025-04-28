@@ -12,6 +12,7 @@ const useNowPlayingMovies = () => {
     // console.log("jasonfile::>>", json.results)
     dispatch(addNowPlayingmovies(json.results));
   };
+  
 
   useEffect(() => {
     getNowPlayingMovies();

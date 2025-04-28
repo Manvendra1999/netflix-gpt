@@ -21,6 +21,24 @@ Netflix-GPT
  - Add hardcoded value to the constant file
  - Register TMDB API and create an app & access token
  - Get data from TMDB now playing movie listAPI
+ - Custom Hook for Now Playing Movies
+ - Create movieSlice
+ - Update Store with movies Data
+ - Planning for MainContauiner & secondary container
+ - Fetch Data for Trailer Video
+ - Update Store with Trailer Video Data
+ - Embedded the Yotube video and make it autoplay and mute
+ - Tailwind Classes to make Main Container look awesome
+ - Build Secondary Component
+ - Build Movie List
+ - build Movie Card
+ - TMDB Image CDN URL
+ - Made the Browsre page amazing with Tailwind CSS
+ - useTopRatedMovies Custom hook
+ - useUpcomingMovies Custom hook
+ - useNowPlayingMovies Custom hook
+
+
 Features
  - Login/Sign Up
  - Sign In /Sign up Form
@@ -44,4 +62,5 @@ Project Setup
 
 Note
 - Make Progressive Web App (PWA) later
+- Give movie name daynmic
 
