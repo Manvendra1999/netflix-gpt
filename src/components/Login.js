@@ -5,7 +5,7 @@ import { checkValidData } from '../utils/Validates';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { addUser } from '../utils/userSlice.js';
 import { useDispatch } from 'react-redux';
-import { USER_AVTAR } from '../utils/constants.js';
+import { BG_URL, USER_AVTAR } from '../utils/constants.js';
 const Login = () => {
     const dispatch = useDispatch();
     const [isSignInForm, setIsSignInForm] = useState(true);
@@ -77,7 +77,7 @@ const Login = () => {
         <div>
             <Header />
             <div className='absolute'>
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/aa9edac4-a0e6-4f12-896e-32c518daec62/web/IN-en-20241223-TRIFECTA-perspective_1502c512-be5f-4f14-b21a-e3d75fe159ab_large.jpg"
+                <img src={BG_URL}
                     alt="Netflix Logo" />
             </div>
             <form onSubmit={(e) => e.preventDefault()} className='absolute p-10 bg-black w-96 my-36 mx-auto right-0 left-0 text-white opacity-85 rounded-sm'>
