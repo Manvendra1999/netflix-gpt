@@ -37,6 +37,9 @@ Netflix-GPT
  - useTopRatedMovies Custom hook
  - useUpcomingMovies Custom hook
  - useNowPlayingMovies Custom hook
+ - GPT Search Page
+ - GPT Search Bar
+ - (EXTRA-WORK) Multi-language Feature in our App
 
 
 Features

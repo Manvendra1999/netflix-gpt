@@ -15,6 +15,7 @@ function Browes() {
   usePopularMovies();
   UseTopRatedMovies();
   useUpcommingMovies();
+  
 
   return (
     <div>
