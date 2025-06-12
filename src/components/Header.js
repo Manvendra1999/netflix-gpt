@@ -149,8 +149,8 @@ const Header = () => {
 
         {/* Mobile menu dropdown */}
         {menuOpen && (
-          <div className="absolute right-2 top-10 rounded-lg shadow-lg w-64 z-50 md:hidden">
-            <div className="px-4 py-4 space-y-4">
+          <div className="absolute -right-4 top-2 bg-black/50 backdrop-blur-md rounded-lg shadow-lg w-64 z-50 md:hidden border border-white/10">
+            <div className="px-2 py-4 space-y-4">
               <div className="flex justify-center">
                 <img
                   src={user?.photoURL}
