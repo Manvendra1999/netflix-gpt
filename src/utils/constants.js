@@ -7,7 +7,7 @@ export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ODFmNGIzNWRiMzBlMzVjZTY0MGExZDhkYmJmZGViOCIsIm5iZiI6MTc0NTU2NTk0OS4yMiwic3ViIjoiNjgwYjM4ZmQyNzZiZjY0ZTQxYWJkM2UzIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.qvsKIkkvv-VRbYOJLJ-adyV-FK9HN2a7dJSgQnMxj28'
+    Authorization: `Bearer ${process.env.REACT_APP_TMDB_KEY}`
   }
 };
 
@@ -19,5 +19,9 @@ export const SUPPORTED_LANGUAGES =[
   {identifier: "en", name:"English"},
   {identifier: "hindi", name:"Hindi"},
   {identifier: "spanish", name:"Spanish"},
-  {identifier: "french", name:"French"},
+  {identifier: "french", name:"French"}
 ];
+
+export const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+export const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_KEY;
+

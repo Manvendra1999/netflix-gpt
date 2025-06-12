@@ -63,7 +63,7 @@ const Login = () => {
                     // Signed in 
                     // const user = userCredential.user;
                     // console.log(user)
-                   
+
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -74,11 +74,15 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className="relative min-h-screen">
             <Header />
-            <div className='absolute'>
-                <img src={BG_URL}
-                    alt="Netflix Logo" />
+            <div className="absolute inset-0 -z-10">
+                <img
+                    src={BG_URL}
+                    alt="Netflix Background"
+                    className="w-full h-full object-cover"
+                    
+                />
             </div>
             <form onSubmit={(e) => e.preventDefault()} className='absolute p-10 bg-black w-96 my-36 mx-auto right-0 left-0 text-white opacity-85 rounded-sm'>
                 <h1 className='font-bold text-3xl py-4'>
