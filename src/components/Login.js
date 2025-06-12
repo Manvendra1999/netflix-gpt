@@ -41,7 +41,6 @@ const Login = () => {
                         displayName: name.current.value,
                         photoURL: USER_AVTAR
                     }).then(() => {
-                        // Profile updated!
                         const { uid, email, displayName, photoURL } = auth.currentUser;
                         dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));
 

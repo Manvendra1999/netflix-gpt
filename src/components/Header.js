@@ -15,7 +15,6 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const user = useSelector(store => store.user);
   const showGptSeatch = useSelector((store) => store.gpt.showGptSeatch);
-
   // console.log("userrrrr111", showGptSeatch)
 
   const [shrinkLogo, setShrinkLogo] = useState(false);
