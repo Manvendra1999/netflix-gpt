@@ -22,7 +22,7 @@ const Header = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShrinkLogo(true);
-    }, 5000); // 5 seconds
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
