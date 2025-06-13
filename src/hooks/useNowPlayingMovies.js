@@ -4,21 +4,18 @@ import { API_OPTIONS } from "../utils/constants";
 import { useEffect } from "react";
 
 const useNowPlayingMovies = () => {
-      // Fetch the data from TMDB API and update store
   const dispatch = useDispatch();
-
-const nowPlayingmovies = useSelector( (store) => store.movies.nowPlayingmovies);
+  const nowPlayingmovies = useSelector((store) => store.movies.nowPlayingmovies);
 
   const getNowPlayingMovies = async () => {
     const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1', API_OPTIONS);
     const json = await data.json();
-    // console.log("jasonfile::>>", json.results)
     dispatch(addNowPlayingmovies(json.results));
   };
-  
 
   useEffect(() => {
-    !nowPlayingmovies && getNowPlayingMovies();
+    if (!nowPlayingmovies) getNowPlayingMovies();
   }, []);
 };
+
 export default useNowPlayingMovies;
