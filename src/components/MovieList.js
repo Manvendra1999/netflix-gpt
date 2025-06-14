@@ -12,7 +12,7 @@ const handleMovieClick = (movie) => {
 };
 
   return (
-    <div className="md:px-8 md:py-6">
+    <div className="md:px-4 md:py-4">
       <h1 className="text-xl md:text-2xl font-bold mb-2 md:mb-4 text-white">{title}</h1>
       <div className="flex overflow-x-scroll gap-3 scrollbar-hide">
         {movies?.map((movie) => (
